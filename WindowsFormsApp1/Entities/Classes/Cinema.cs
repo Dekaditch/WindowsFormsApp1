@@ -29,14 +29,14 @@ namespace WindowsFormsApp1.Entities
             if (string.IsNullOrWhiteSpace(bankNumber)) throw new ArgumentException(nameof(bankNumber), "У кинотеатра должен быть счет в банке (поле пустое)");
             if (string.IsNullOrWhiteSpace(itn)) throw new ArgumentException(nameof(itn), "У кинотеатра должен быть ИНН (поле пустое)");
             if (seats <= 0) throw new ArgumentException(nameof(seats), "Количество посадочных мест в кинотеатре должно быть больше чем 0");
-            address = Address;
-            phoneNumber = PhoneNumber;
-            director = Director;
-            owner = Owner;
-            bank = Bank;
-            bankNumber = BankNumber;
-            itn = ITN;
-            seats = Seats;
+            Address = address;
+            PhoneNumber = phoneNumber;
+            Director = director;
+            Owner = owner;
+            Bank = bank;
+            BankNumber = bankNumber;
+            ITN = itn;
+            Seats = seats;
         }
         
         public void Update(string address, string phoneNumber, string director, string owner, string bank, string bankNumber, string itn, int seats) 

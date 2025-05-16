@@ -9,7 +9,6 @@ namespace WindowsFormsApp1.Presenter.Interfaces
 {
     public interface ICinemaPresenter
     {
-        void LoadCinema();
         void AddCinema(CinemaDTO cinemaDTO);
         void RemoveCinema(string address);
         void UpdateCinema(CinemaDTO cinemaDTO);

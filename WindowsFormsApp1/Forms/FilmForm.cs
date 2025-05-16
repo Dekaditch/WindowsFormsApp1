@@ -28,8 +28,29 @@ namespace WindowsFormsApp1.Forms
             _filmPresenter = filmsPresenter;
             LoadFilms();
         }
-        private int ReleaseYearToInt;
-        private double FilmCostToDouble;
+        private int ReleaseYearToInt
+        {
+            get 
+            {
+                return Convert.ToInt32(textReleaseYear.Text);
+            }
+            set
+            {
+                textReleaseYear.Text = value.ToString();
+            }
+        }
+        
+        private double FilmCostToDouble 
+        {
+            get
+            {
+                return Convert.ToDouble(textCost.Text);
+            }
+            set 
+            {
+                textCost.Text = value.ToString();
+            }
+        }
         private readonly IFilmsPresenter _filmPresenter;
         private readonly FilmsService _filmService;
         private const string jsonFilePath = "films.json";
@@ -61,7 +82,7 @@ namespace WindowsFormsApp1.Forms
             textStageDirector.Clear();
             textProducer.Clear();
             textReleaseYear.Clear();
-            textFilmCost.Clear();
+            textCost.Clear();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -78,6 +99,7 @@ namespace WindowsFormsApp1.Forms
             };
             _filmPresenter.AddFilm(filmDTO);
             ClearFields();
+            LoadFilms();
             SaveFilmToJson();
         }
         private void SaveFilmToJson()
@@ -114,16 +136,6 @@ namespace WindowsFormsApp1.Forms
             _filmPresenter.UpdateFilm(filmDTO);
         }
 
-        private void textReleaseYear_TextChanged(object sender, EventArgs e)
-        {
-            ReleaseYearToInt = Convert.ToInt32(textReleaseYear.Text);
-        }
-
-        private void textFilmCost_TextChanged(object sender, EventArgs e)
-        {
-            FilmCostToDouble = Convert.ToDouble(textFilmCost.Text);
-        }
-
         public void ClearFilmsList()
         {
             _filmPresenter.RemoveFilm(Name);
@@ -134,7 +146,7 @@ namespace WindowsFormsApp1.Forms
         public void AddFilmsToList(FilmsDTO filmsDTO)
         {
             dataGridView1.Rows.Add(filmsDTO.Title, filmsDTO.Genre, filmsDTO.ScriptWriter, filmsDTO.StageDirector,
-               filmsDTO.Producer, filmsDTO.ReleaseYear, filmsDTO.FilmCost);
+               filmsDTO.Producer, filmsDTO.ReleaseYear, filmsDTO.FilmCost.ToString());
         }
     }
 }

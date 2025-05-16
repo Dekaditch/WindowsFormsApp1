@@ -9,7 +9,6 @@ namespace WindowsFormsApp1.Presenter.Interfaces
 {
     public interface ISupplierPresenter
     {
-        void LoadSupplier();
         void AddSupplier(SupplierDTO supplierDTO);
         void RemoveSupplier(string name);
         void UpdateSupplier(SupplierDTO supplierDTO);

@@ -9,7 +9,6 @@ namespace WindowsFormsApp1.Presenter.Interfaces
 {
     public interface IFilmsPresenter
     {
-        void LoadFilms();
         void AddFilm(FilmsDTO filmsDTO);
         void RemoveFilm(string title);
         void UpdateFilm(FilmsDTO filmsDTO);

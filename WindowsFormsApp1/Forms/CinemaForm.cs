@@ -26,7 +26,17 @@ namespace WindowsFormsApp1.Forms
             _cinemaPresenter = cinemaPresenter;
             LoadCinemas();
         }
-        private int SeatsToInt;
+        private int SeatsToInt
+        {
+            get
+            {
+                return Convert.ToInt32(textSeats.Text);
+            }
+            set
+            {
+                textSeats.Text = value.ToString();
+            }
+        }
         private readonly ICinemaPresenter _cinemaPresenter;
         private readonly ICinemaService _cinemaService;
         private const string jsonFilePath = "cinemas.json";
@@ -45,15 +55,15 @@ namespace WindowsFormsApp1.Forms
 
         public string Director { get => textDirector.Text; set => textDirector.Text = value; }
 
-        public string Bank { get => textBank.Text; set => textBank.Text = value; }
+        public string Owner { get => textOwner.Text; set => textOwner.Text = value; }
 
+        public string Bank { get => textBank.Text; set => textBank.Text = value; }
         public string BankNumber { get => textBankNumber.Text; set => textBankNumber.Text = value; }
 
-        public string ITN { get => textBank.Text; set => textBank.Text = value; }
+        public string ITN { get => textITN.Text; set => textITN.Text = value; }
 
         public int Seats { get => SeatsToInt; set => SeatsToInt = value; }
 
-        public string Owner { get => textOwner.Text; set => textOwner.Text = value; }
 
         public void ShowMessage(string message)
         {
@@ -68,6 +78,7 @@ namespace WindowsFormsApp1.Forms
             textBankNumber.Clear();
             textSeats.Clear();
             textOwner.Clear();
+            textITN.Clear();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -85,6 +96,7 @@ namespace WindowsFormsApp1.Forms
             };
             _cinemaPresenter.AddCinema(cinemaDTO);
             ClearFields();
+            LoadCinemas();
             SaveCinemaToJson();
         }
         private void SaveCinemaToJson()
@@ -97,9 +109,8 @@ namespace WindowsFormsApp1.Forms
 
         public void AddCinemaToList(CinemaDTO cinema)
         {
-            dataGridView1.Rows.Add(cinema.Address, cinema.PhoneNumber, cinema.Bank,
-                cinema.BankNumber, cinema.ITN, cinema.Owner, cinema.Seats);
-
+            dataGridView1.Rows.Add(cinema.Address,  cinema.PhoneNumber, cinema.Director, cinema.Owner,
+                cinema.Bank, cinema.BankNumber, cinema.ITN,  cinema.Seats.ToString());
         }
 
 
@@ -108,11 +119,6 @@ namespace WindowsFormsApp1.Forms
             _cinemaPresenter.RemoveCinema(Name);
             ClearFields();
             SaveCinemaToJson();
-        }
-
-        private void textSeats_TextChanged(object sender, EventArgs e)
-        {
-            SeatsToInt = Convert.ToInt32(textSeats.Text);
         }
 
         private void button_Update_Click(object sender, EventArgs e)
@@ -135,6 +141,7 @@ namespace WindowsFormsApp1.Forms
                 Seats = Seats
             };
             _cinemaPresenter.UpdateCinema(cinemaDTO);
+            LoadCinemas();
         }
 
         private void button_Delete_Click(object sender, EventArgs e)

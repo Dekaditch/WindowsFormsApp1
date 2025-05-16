@@ -71,6 +71,7 @@ namespace WindowsFormsApp1.Forms
             };
             _supplierPresenter.AddSupplier(supplierDTO);
             ClearFields();
+            LoadSuppliers();
             SaveSupplierToJson();
         }
         private void SaveSupplierToJson() 
@@ -104,7 +105,7 @@ namespace WindowsFormsApp1.Forms
                 SupplierBank = SupplierBank,
                 SupplierBankNumber = SupplierBankNumber,
                 SupplierITN = SupplierITN};
-            _supplierPresenter.UpdateSupplier(supplierDTO);
+                _supplierPresenter.UpdateSupplier(supplierDTO);
         }
 
         public void ClearSupplierList()

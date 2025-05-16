@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Addres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Own = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bankk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITN_Cinema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seatss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,15 +62,64 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Addres,
+            this.Phone,
+            this.Direct,
+            this.Own,
+            this.Bankk,
+            this.Number,
+            this.ITN_Cinema,
+            this.Seatss});
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(417, 498);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 498);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Addres
+            // 
+            this.Addres.HeaderText = "Адрес кинотеатра";
+            this.Addres.Name = "Addres";
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Контактный телефон";
+            this.Phone.Name = "Phone";
+            // 
+            // Direct
+            // 
+            this.Direct.HeaderText = "Директор";
+            this.Direct.Name = "Direct";
+            // 
+            // Own
+            // 
+            this.Own.HeaderText = "Владелец";
+            this.Own.Name = "Own";
+            // 
+            // Bankk
+            // 
+            this.Bankk.HeaderText = "Банк";
+            this.Bankk.Name = "Bankk";
+            // 
+            // Number
+            // 
+            this.Number.HeaderText = "Номер банка";
+            this.Number.Name = "Number";
+            // 
+            // ITN_Cinema
+            // 
+            this.ITN_Cinema.HeaderText = "ИНН кинотеатра";
+            this.ITN_Cinema.Name = "ITN_Cinema";
+            // 
+            // Seatss
+            // 
+            this.Seatss.HeaderText = "Кол-во сидений";
+            this.Seatss.Name = "Seatss";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(489, 39);
+            this.label1.Location = new System.Drawing.Point(887, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 1;
@@ -71,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(480, 80);
+            this.label2.Location = new System.Drawing.Point(878, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 2;
@@ -80,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(537, 128);
+            this.label3.Location = new System.Drawing.Point(935, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 3;
@@ -88,65 +145,64 @@
             // 
             // textAddress
             // 
-            this.textAddress.Location = new System.Drawing.Point(600, 36);
+            this.textAddress.Location = new System.Drawing.Point(998, 36);
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(144, 20);
             this.textAddress.TabIndex = 4;
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(600, 77);
+            this.textPhone.Location = new System.Drawing.Point(998, 77);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(144, 20);
             this.textPhone.TabIndex = 5;
             // 
             // textDirector
             // 
-            this.textDirector.Location = new System.Drawing.Point(600, 125);
+            this.textDirector.Location = new System.Drawing.Point(998, 125);
             this.textDirector.Name = "textDirector";
             this.textDirector.Size = new System.Drawing.Size(144, 20);
             this.textDirector.TabIndex = 6;
             // 
             // textOwner
             // 
-            this.textOwner.Location = new System.Drawing.Point(600, 178);
+            this.textOwner.Location = new System.Drawing.Point(998, 178);
             this.textOwner.Name = "textOwner";
             this.textOwner.Size = new System.Drawing.Size(144, 20);
             this.textOwner.TabIndex = 7;
             // 
             // textBank
             // 
-            this.textBank.Location = new System.Drawing.Point(600, 224);
+            this.textBank.Location = new System.Drawing.Point(998, 224);
             this.textBank.Name = "textBank";
             this.textBank.Size = new System.Drawing.Size(144, 20);
             this.textBank.TabIndex = 8;
             // 
             // textBankNumber
             // 
-            this.textBankNumber.Location = new System.Drawing.Point(600, 273);
+            this.textBankNumber.Location = new System.Drawing.Point(998, 273);
             this.textBankNumber.Name = "textBankNumber";
             this.textBankNumber.Size = new System.Drawing.Size(144, 20);
             this.textBankNumber.TabIndex = 9;
             // 
             // textITN
             // 
-            this.textITN.Location = new System.Drawing.Point(600, 320);
+            this.textITN.Location = new System.Drawing.Point(998, 320);
             this.textITN.Name = "textITN";
             this.textITN.Size = new System.Drawing.Size(144, 20);
             this.textITN.TabIndex = 10;
             // 
             // textSeats
             // 
-            this.textSeats.Location = new System.Drawing.Point(600, 366);
+            this.textSeats.Location = new System.Drawing.Point(998, 366);
             this.textSeats.Name = "textSeats";
             this.textSeats.Size = new System.Drawing.Size(144, 20);
             this.textSeats.TabIndex = 11;
-            this.textSeats.TextChanged += new System.EventHandler(this.textSeats_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(477, 181);
+            this.label4.Location = new System.Drawing.Point(875, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 13);
             this.label4.TabIndex = 12;
@@ -155,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(562, 227);
+            this.label5.Location = new System.Drawing.Point(960, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 13;
@@ -164,7 +220,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(520, 276);
+            this.label6.Location = new System.Drawing.Point(918, 276);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 14;
@@ -173,7 +229,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(502, 323);
+            this.label7.Location = new System.Drawing.Point(900, 323);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 15;
@@ -182,7 +238,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(508, 369);
+            this.label8.Location = new System.Drawing.Point(906, 369);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 16;
@@ -190,16 +246,17 @@
             // 
             // button_Add
             // 
-            this.button_Add.Location = new System.Drawing.Point(451, 436);
+            this.button_Add.Location = new System.Drawing.Point(849, 436);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(102, 51);
             this.button_Add.TabIndex = 17;
             this.button_Add.Text = "Добавить";
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // button_Update
             // 
-            this.button_Update.Location = new System.Drawing.Point(559, 436);
+            this.button_Update.Location = new System.Drawing.Point(957, 436);
             this.button_Update.Name = "button_Update";
             this.button_Update.Size = new System.Drawing.Size(102, 51);
             this.button_Update.TabIndex = 18;
@@ -209,7 +266,7 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Location = new System.Drawing.Point(667, 436);
+            this.button_Delete.Location = new System.Drawing.Point(1065, 436);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(102, 51);
             this.button_Delete.TabIndex = 19;
@@ -221,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.ClientSize = new System.Drawing.Size(1179, 499);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Update);
             this.Controls.Add(this.button_Add);
@@ -272,5 +329,13 @@
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Addres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Own;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bankk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITN_Cinema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seatss;
     }
 }
