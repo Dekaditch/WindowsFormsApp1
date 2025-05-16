@@ -15,5 +15,6 @@ namespace WindowsFormsApp1.DTOs
         public CinemaDTO Cinema { get; set; }
         public double Penalty { get; set; }
         public double RentCost { get; set; }
+        public int RentID { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace WindowsFormsApp1.Entities.Interfaces
         Cinema Cinema { get; }
         double Penalty { get; }
         double RentCost { get; }
+        int RentID { get; }
     }
 }

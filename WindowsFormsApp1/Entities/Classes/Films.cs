@@ -14,7 +14,7 @@ namespace WindowsFormsApp1.Entities
         public string Genre { get; private set; }
         public string ScriptWriter { get; private set; }
         public string StageDirector { get; private set; }
-        public string Producer { get; private set; }//company
+        public string Producer { get; private set; } //company
         public int ReleaseYear { get; private set; }
         public double FilmCost { get; private set; }
 

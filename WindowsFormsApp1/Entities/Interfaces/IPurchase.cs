@@ -12,5 +12,6 @@ namespace WindowsFormsApp1.Entities.Interfaces
         Supplier Supplier { get; }
         DateTimeOffset PurchaseDate { get; }
         double PurchaseCost { get; }
+        int PurchaseID { get; }
     }
 }

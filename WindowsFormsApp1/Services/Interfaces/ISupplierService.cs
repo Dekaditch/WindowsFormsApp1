@@ -14,5 +14,6 @@ namespace WindowsFormsApp1.Services.Interfaces
         void AddSupplier(SupplierDTO supplierDTO);
         void RemoveSupplier(string name);
         void UpdateSupplier(Supplier supplier);
+        SupplierDTO GetSupplierByITN(string supplierITN);
     }
 }

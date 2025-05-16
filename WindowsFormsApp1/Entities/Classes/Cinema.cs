@@ -9,14 +9,14 @@ namespace WindowsFormsApp1.Entities
 {
     public class Cinema : ICinema
     {
-        public string Address { get; private set; } 
-        public string PhoneNumber { get; private set; }
-        public string Director { get; private set; }
-        public string Owner { get; private set; }
-        public string Bank { get; private set; }
-        public string BankNumber { get; private set; }
-        public string ITN { get; private set; }
-        public int Seats { get; private set; }
+        public string Address { get; private set; } // адресс кинотеатра
+        public string PhoneNumber { get; private set; } // контактный телефон
+        public string Director { get; private set; } // Директор
+        public string Owner { get; private set; } // Владелец
+        public string Bank { get; private set; } // Банк кинотеатра
+        public string BankNumber { get; private set; } // Номер банка кинотеатра
+        public string ITN { get; private set; } // ИНН кинотеатра
+        public int Seats { get; private set; } // Колличество сидений
 
 
         public Cinema(string address, string phoneNumber, string director, string owner, string bank, string bankNumber, string itn, int seats) 
@@ -41,14 +41,14 @@ namespace WindowsFormsApp1.Entities
         
         public void Update(string address, string phoneNumber, string director, string owner, string bank, string bankNumber, string itn, int seats) 
         {
-            address = Address;
-            phoneNumber = PhoneNumber;
-            director = Director;
-            owner = Owner;
-            bank = Bank;
-            bankNumber = BankNumber;
-            itn = ITN;
-            seats = Seats;
+            Address = address;
+            PhoneNumber = phoneNumber;
+            Director = director;
+            Owner = owner;
+            Bank = bank;
+            BankNumber = bankNumber;
+            ITN = itn;
+            Seats = seats;
         }
     }
 }

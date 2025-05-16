@@ -45,5 +45,16 @@ namespace WindowsFormsApp1.Services.Classes
                 throw new ArgumentException("Поставщик не найден");
             existingSupplier.Update(supplier.Name, supplier.LegalAddress, supplier.SupplierBank, supplier.SupplierBankNumber, supplier.SupplierITN);
         }
+
+        public SupplierDTO GetSupplierByITN(string supplierITN)
+        {
+            var suppliers = _repository.GetAll();
+            foreach (var supplier in suppliers)
+            {
+                if (supplier.SupplierITN == supplierITN)
+                    return SupplierMap.ToDTO(supplier);
+            }
+            return null;
+        }
     }
 }

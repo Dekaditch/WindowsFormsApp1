@@ -95,11 +95,29 @@
     <Compile Include="Entities\Interfaces\IPurchase.cs" />
     <Compile Include="Entities\Interfaces\IRental.cs" />
     <Compile Include="Entities\Interfaces\ISupplier.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CinemaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CinemaForm.Designer.cs">
+      <DependentUpon>CinemaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilmForm.Designer.cs">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentalForm.Designer.cs">
+      <DependentUpon>RentalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SupplierForm.cs">
       <SubType>Form</SubType>
@@ -149,8 +167,17 @@
     <Compile Include="Views\IPurchaseView.cs" />
     <Compile Include="Views\IRentalView.cs" />
     <Compile Include="Views\ISupplierView.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CinemaForm.resx">
+      <DependentUpon>CinemaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilmForm.resx">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentalForm.resx">
+      <DependentUpon>RentalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>

@@ -15,10 +15,11 @@ namespace WindowsFormsApp1.Entities
         public Cinema Cinema { get; private set; }
         public double Penalty { get; private set; }
         public double RentCost { get; private set; }
+        public int RentID { get; private set; }
 
         
 
-        public Rental(DateTimeOffset dateStart, DateTimeOffset dateEnd, Films films, Cinema cinema, double penalty, double rentCost)
+        public Rental(DateTimeOffset dateStart, DateTimeOffset dateEnd, Films films, Cinema cinema, double penalty, double rentCost, int rentID)
         {
             if (dateStart == null && dateStart.Year < Films.ReleaseYear) 
                 throw new ArgumentNullException(nameof(dateStart), "Дата начала аренды фильма не может быть NULL и меньше года релиза фильма");
@@ -31,16 +32,19 @@ namespace WindowsFormsApp1.Entities
             if (penalty <= 0) 
                 throw new ArgumentException(nameof(penalty), "Стоимость штрафа должна иметь положительное значение");
             if (rentCost <= 0) 
-                throw new ArgumentException(nameof(rentCost), "Стоимость аренды фильма должна иметь положительное значение");
+                throw new ArgumentException(nameof(rentCost), "Стоимость аренды фильма должна иметь положительное значение"); if (rentCost <= 0) 
+               if (rentID <= 0)
+                throw new ArgumentException(nameof(rentID), "ID аренды должен иметь положительное значение");
             DateStart = dateStart;
             DateEnd = dateEnd;
             Films = films;
             Cinema = cinema;
             Penalty = penalty;
             RentCost = rentCost;
+            RentID = rentID;
         }
         
-        public void Update(DateTimeOffset dateStart, DateTimeOffset dateEnd, Films films, Cinema cinema, double penalty, double rentCost) 
+        public void Update(DateTimeOffset dateStart, DateTimeOffset dateEnd, Films films, Cinema cinema, double penalty, double rentCost, int rentID) 
         {
             DateStart = dateStart;
             DateEnd = dateEnd;
@@ -48,6 +52,7 @@ namespace WindowsFormsApp1.Entities
             Cinema = cinema;
             Penalty = penalty;
             RentCost = rentCost;
+            RentID = rentID;
         }
     }
 }

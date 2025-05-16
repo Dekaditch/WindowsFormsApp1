@@ -13,8 +13,9 @@ namespace WindowsFormsApp1.Entities
         public Supplier Supplier { get; private set; }
         public DateTimeOffset PurchaseDate { get; private set; }
         public double PurchaseCost {  get; private set; } 
+        public int PurchaseID { get; private set; }
 
-        public Purchase(Films films, Supplier supplier, DateTimeOffset purchaseDate, double purchaseCost) 
+        public Purchase(Films films, Supplier supplier, DateTimeOffset purchaseDate, double purchaseCost, int purchaseID) 
         {
             if (films == null) 
                throw new ArgumentNullException(nameof(films), "Фильм не может быть NULL");
@@ -24,18 +25,22 @@ namespace WindowsFormsApp1.Entities
                 throw new ArgumentNullException(nameof(purchaseDate), "Дата закупки не может быть NULL");
             if (purchaseCost <= 0)
                 throw new ArgumentException(nameof(purchaseDate), "Закупка должна иметь положительное значение");
+            if (purchaseID <= 0)
+                throw new ArgumentException(nameof(purchaseID), "Неверное значение ID");
             Films = films;
             Supplier = supplier;
             PurchaseDate = purchaseDate;
             PurchaseCost = purchaseCost;
+            PurchaseID = purchaseID;
         }
 
-        public void Update(Films films, Supplier supplier, DateTimeOffset purchaseDate, double purchaseCost) 
+        public void Update(Films films, Supplier supplier, DateTimeOffset purchaseDate, double purchaseCost, int purchaseID) 
         {
             Films = films;
             Supplier = supplier;
             PurchaseDate = purchaseDate;
             PurchaseCost = purchaseCost;
+            PurchaseID = purchaseID;
         }
     }
 }

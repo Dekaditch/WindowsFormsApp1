@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.Services.Interfaces
         void AddCinema(CinemaDTO cinemaDTO);
         void RemoveCinema(string address);
         void UpdateCinema(Cinema cinema);
+        CinemaDTO GetCinemaByAddress(string address);
 
     }
 }

@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Mappers
 {
     public static class RentalMap
     {
-        public static RentalDTO ToDTO(Rental rental) 
+        public static RentalDTO ToDTO(Rental rental)
         {
             if (rental == null) return null;
             return new RentalDTO
@@ -20,12 +20,13 @@ namespace WindowsFormsApp1.Mappers
                 Films = FilmsMap.ToDTO((Films)rental.Films),
                 Cinema = CinemaMap.ToDTO((Cinema)rental.Cinema),
                 Penalty = rental.Penalty,
-                RentCost = rental.RentCost
+                RentCost = rental.RentCost,
+                RentID = rental.RentID
             };
         }
-        public static Rental ToEntity(RentalDTO rentalDTO) 
+        public static Rental ToEntity(RentalDTO rentalDTO)
         {
-            if(rentalDTO == null) return null;
+            if (rentalDTO == null) return null;
             return new Rental
             (
                 rentalDTO.DateEnd,
@@ -33,7 +34,8 @@ namespace WindowsFormsApp1.Mappers
                 FilmsMap.ToEntity(rentalDTO.Films),
                 CinemaMap.ToEntity(rentalDTO.Cinema),
                 rentalDTO.Penalty,
-                rentalDTO.RentCost
+                rentalDTO.RentCost,
+                rentalDTO.RentID
             );
         }
     }

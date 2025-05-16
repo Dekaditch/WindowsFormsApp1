@@ -7,7 +7,7 @@ using WindowsFormsApp1.DTOs;
 
 namespace WindowsFormsApp1.Presenter.Interfaces
 {
-    internal interface ICinemaPresenter
+    public interface ICinemaPresenter
     {
         void LoadCinema();
         void AddCinema(CinemaDTO cinemaDTO);

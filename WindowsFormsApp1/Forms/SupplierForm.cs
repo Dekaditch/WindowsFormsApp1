@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Views;
 using WindowsFormsApp1.Presenter.Interfaces;
+using WindowsFormsApp1.Services.Interfaces;
 using System.CodeDom;
 using System.Security.Cryptography.X509Certificates;
 using WindowsFormsApp1.DTOs;
@@ -29,6 +30,7 @@ namespace WindowsFormsApp1.Forms
             LoadSuppliers();
         }
         private readonly ISupplierPresenter _supplierPresenter;
+        private readonly ISupplierService _supplierService;
         private const string jsonFilePath = "suppliers.json";
         private void LoadSuppliers() 
         {
@@ -39,10 +41,7 @@ namespace WindowsFormsApp1.Forms
                 AddSupplierToList(supplier);
             }
         }
-        public string Name 
-        { 
-            get => textName.Text; set => textName.Text = value;
-                }
+        public string Name { get => textName.Text; set => textName.Text = value; }
         public string LegalAddress { get => textLegalAddress.Text; set => textLegalAddress.Text = value; }
         public string SupplierBank { get => textSBank.Text; set => textSBank.Text = value; }
         public string SupplierBankNumber { get => textSBankNumber.Text; set => textSBankNumber.Text = value; }
@@ -84,9 +83,7 @@ namespace WindowsFormsApp1.Forms
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            _supplierPresenter.RemoveSupplier(Name);
-            ClearFields();
-            SaveSupplierToJson();
+            ClearSupplierList();
         }
 
         public void AddSupplierToList(SupplierDTO supplier)
@@ -96,7 +93,28 @@ namespace WindowsFormsApp1.Forms
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-
+            var objectEntity = _supplierService.GetSupplierByITN(textSITN.Text);
+            if (objectEntity == null)
+            {
+                ShowMessage("Поставщик с данным ИНН не был найден.");
+                return;
+            }
+            var supplierDTO = new SupplierDTO{Name = Name,
+                LegalAddress = LegalAddress,
+                SupplierBank = SupplierBank,
+                SupplierBankNumber = SupplierBankNumber,
+                SupplierITN = SupplierITN};
+            _supplierPresenter.UpdateSupplier(supplierDTO);
         }
+
+        public void ClearSupplierList()
+        {
+            _supplierPresenter.RemoveSupplier(Name);
+            ClearFields();
+            SaveSupplierToJson();
+        }
+
+
+
     }
 }

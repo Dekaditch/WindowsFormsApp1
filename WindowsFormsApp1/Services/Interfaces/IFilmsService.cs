@@ -14,5 +14,6 @@ namespace WindowsFormsApp1.Services.Interfaces
         void AddFilms(FilmsDTO filmsDTO);
         void RemoveFilms(string title);
         void UpdateFilms(Films films);
+        FilmsDTO GetFilmsByTitle(string title);
     }
 }

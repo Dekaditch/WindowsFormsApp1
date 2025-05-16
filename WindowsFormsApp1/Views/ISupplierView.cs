@@ -9,13 +9,11 @@ namespace WindowsFormsApp1.Views
 {
     internal interface ISupplierView
     {
-        string Title { get; }
-        string Genre { get; }
-        string ScriptWriter { get; }
-        string StageDirector { get; }
-        string Producer { get; }
-        int ReleaseYear { get; }
-        double FilmCost { get; }
+        string Name { get;}
+        string LegalAddress { get;}
+        string SupplierBank { get; }
+        string SupplierBankNumber { get; }
+        string SupplierITN { get; }
 
         void ShowMessage(string message);
         void ClearFields();

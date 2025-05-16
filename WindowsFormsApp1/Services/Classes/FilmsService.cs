@@ -44,5 +44,16 @@ namespace WindowsFormsApp1.Services.Classes
                 throw new ArgumentException("Фильм не найден");
             existingFilms.Update(films.Title, films.Genre, films.ScriptWriter, films.StageDirector, films.Producer, films.ReleaseYear, films.FilmCost);
         }
+
+        public FilmsDTO GetFilmsByTitle(string Title)
+        {
+            var films = _repository.GetAll();
+            foreach (var film in films)
+            {
+                if (film.Title == Title)
+                    return FilmsMap.ToDTO(film);
+            }
+            return null;
+        }
     }
 }

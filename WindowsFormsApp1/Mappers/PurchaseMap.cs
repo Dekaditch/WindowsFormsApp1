@@ -19,6 +19,7 @@ namespace WindowsFormsApp1.Mappers
                 Supplier = SupplierMap.ToDTO(purchase.Supplier),
                 PurchaseDate = purchase.PurchaseDate,
                 PurchaseCost = purchase.PurchaseCost,
+                PurchaseID = purchase.PurchaseID
             };
         }
         public static Purchase ToEntity(PurchaseDTO purchaseDTO) 
@@ -29,7 +30,8 @@ namespace WindowsFormsApp1.Mappers
                 FilmsMap.ToEntity(purchaseDTO.Films),
                 SupplierMap.ToEntity(purchaseDTO.Supplier),
                 purchaseDTO.PurchaseDate,
-                purchaseDTO.PurchaseCost
+                purchaseDTO.PurchaseCost,
+                purchaseDTO.PurchaseID
             );
         }
     }

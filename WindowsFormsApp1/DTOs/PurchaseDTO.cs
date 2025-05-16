@@ -13,5 +13,6 @@ namespace WindowsFormsApp1.DTOs
         public SupplierDTO Supplier { get; set; }
         public DateTimeOffset PurchaseDate { get; set; }
         public double PurchaseCost { get; set; }
+        public int PurchaseID { get; set; }
     }
 }
